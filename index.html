@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Онлайн-сервіс бронювання квитків</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>🚂 Онлайн-сервіс бронювання квитків</h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Головна</a></li>
+            <li><a href="#booking">Бронювання</a></li>
+            <li><a href="#schedule">Розклад</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <h2>Зручне бронювання залізничних квитків</h2>
+        <p>Оберіть маршрут, вагон та місце - все в кілька кліків!</p>
+      </section>
+
+      <!-- Image Slider -->
+      <section class="slider-section">
+        <h3>Наші послуги</h3>
+        <div class="slider">
+          <div class="slides">
+            <div class="slide active">
+              <img
+                src="https://via.placeholder.com/800x400/4CAF50/white?text=Електронне+бронювання"
+                alt="Електронне бронювання"
+              />
+              <p>Електронне бронювання</p>
+            </div>
+            <div class="slide">
+              <img
+                src="https://via.placeholder.com/800x400/2196F3/white?text=Вибір+місць"
+                alt="Вибір місць"
+              />
+              <p>Вибір місць у вагоні</p>
+            </div>
+            <div class="slide">
+              <img
+                src="https://via.placeholder.com/800x400/FF9800/white?text=Мобільний+доступ"
+                alt="Мобільний доступ"
+              />
+              <p>Мобільний доступ</p>
+            </div>
+          </div>
+          <button class="prev">‹</button>
+          <button class="next">›</button>
+        </div>
+      </section>
+
+      <!-- Booking Form -->
+      <section id="booking" class="booking-form">
+        <h3>Бронювання квитків</h3>
+        <form id="ticketForm">
+          <div class="form-group">
+            <label for="from">Звідки:</label>
+            <input type="text" id="from" name="from" required />
+          </div>
+
+          <div class="form-group">
+            <label for="to">Куди:</label>
+            <input type="text" id="to" name="to" required />
+          </div>
+
+          <div class="form-group">
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="passengers">Кількість пасажирів:</label>
+            <select id="passengers" name="passengers" required>
+              <option value="">Оберіть...</option>
+              <option value="1">1 пасажир</option>
+              <option value="2">2 пасажири</option>
+              <option value="3">3 пасажири</option>
+              <option value="4">4 пасажири</option>
+            </select>
+          </div>
+
+          <button type="submit">Знайти квитки</button>
+        </form>
+        <div id="formMessage" class="message"></div>
+      </section>
+
+      <!-- Schedule Table -->
+      <section id="schedule" class="schedule">
+        <h3>Розклад поїздів</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Поїзд</th>
+                <th>Маршрут</th>
+                <th>Відправлення</th>
+                <th>Прибуття</th>
+                <th>Вільні місця</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>№ 743</td>
+                <td>Київ - Львів</td>
+                <td>08:00</td>
+                <td>14:30</td>
+                <td>24</td>
+              </tr>
+              <tr>
+                <td>№ 156</td>
+                <td>Харків - Одеса</td>
+                <td>10:15</td>
+                <td>20:45</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>№ 891</td>
+                <td>Дніпро - Ужгород</td>
+                <td>14:20</td>
+                <td>06:30</td>
+                <td>36</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Tickets List -->
+      <section class="tickets">
+        <h3>Доступні квитки</h3>
+        <div id="ticketsList" class="tickets-grid">
+          <!-- Tickets will be added dynamically -->
+        </div>
+        <button id="addTicketBtn" class="add-btn">
+          Додати тестовий квиток
+        </button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacts">
+      <div class="container">
+        <p>&copy; 2025 Онлайн-сервіс бронювання квитків. Всі права захищені.</p>
+        <p>Контакти: +380-12-345-67-89 | tickets@railway.ua</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
